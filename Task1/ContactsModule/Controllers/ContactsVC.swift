@@ -19,8 +19,8 @@ class ContactsVC: UIViewController {
     var searchController: UISearchController!
     
     
-    var groupedContacts = [String: [Contact]]()  // Dictionary to group contacts
-    var sectionTitles: [String] = []  // Titles (A, B, C, ...)
+    var groupedContacts = [String: [Contact]]()  
+    var sectionTitles: [String] = []
     
     
     override func viewDidLoad() {
@@ -108,15 +108,15 @@ extension ContactsVC: UITableViewDelegate,UITableViewDataSource{
         let contact: Contact
         
         if searchController.isActive {
-            // When searching, use the filteredContacts array
+            
             contact = filteredContacts[indexPath.row]
         } else {
-            // When not searching, get the correct section and row
+          
             let key = sectionTitles[indexPath.section]
             if let contactsInSection = groupedContacts[key] {
                 contact = contactsInSection[indexPath.row]
             } else {
-                fatalError("Section data mismatch") // This should never happen
+                fatalError("Section data mismatch")
             }
         }
         
@@ -141,12 +141,7 @@ extension ContactsVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return sectionTitles.firstIndex(of: title) ?? 0
     }
-
-
-    
-
-        
-        
+   
         
     }
     
@@ -162,17 +157,14 @@ extension ContactsVC: UISearchControllerDelegate, UISearchResultsUpdating {
             DispatchQueue.main.async {
                 self.contactsTabelView.reloadData()
             }
-            
-            
-            
         }
     }
 
 extension ContactsVC: AddContactDelegate {
     func didAddContact(_ contact: Contact) {
-        contacts.append(contact) // Add to main contacts list
+        contacts.append(contact)
         
-        // Update groupedContacts
+       
         let firstLetter = String(contact.name.prefix(1)).uppercased()
         
         if var existingContacts = groupedContacts[firstLetter] {

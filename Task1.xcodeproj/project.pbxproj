@@ -45,6 +45,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04447EDC2D74725D00550150 /* ContactsModule */ = {
+			isa = PBXGroup;
+			children = (
+				049589CB2D74459F004BF4E0 /* Managers */,
+				049589C22D744166004BF4E0 /* Model */,
+				049589C12D744155004BF4E0 /* Controllers */,
+			);
+			path = ContactsModule;
+			sourceTree = "<group>";
+		};
+		04447EDD2D7472A200550150 /* FavoritesModule */ = {
+			isa = PBXGroup;
+			children = (
+				049589C52D7441BE004BF4E0 /* FavoritesVC.swift */,
+			);
+			path = FavoritesModule;
+			sourceTree = "<group>";
+		};
+		04447EDE2D7472BB00550150 /* AddContactModule */ = {
+			isa = PBXGroup;
+			children = (
+				049589CE2D7455B4004BF4E0 /* AddContactVC.swift */,
+			);
+			path = AddContactModule;
+			sourceTree = "<group>";
+		};
 		049589A12D74410D004BF4E0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +90,10 @@
 		049589AC2D74410D004BF4E0 /* Task1 */ = {
 			isa = PBXGroup;
 			children = (
+				04447EDE2D7472BB00550150 /* AddContactModule */,
+				04447EDD2D7472A200550150 /* FavoritesModule */,
+				04447EDC2D74725D00550150 /* ContactsModule */,
 				049589D02D745CEB004BF4E0 /* Support */,
-				049589CB2D74459F004BF4E0 /* Managers */,
-				049589C22D744166004BF4E0 /* Model */,
-				049589C12D744155004BF4E0 /* Controllers */,
 				049589B32D74410D004BF4E0 /* Main.storyboard */,
 				049589BB2D74410F004BF4E0 /* Info.plist */,
 			);
@@ -78,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				049589C32D744188004BF4E0 /* ContactsVC.swift */,
-				049589C52D7441BE004BF4E0 /* FavoritesVC.swift */,
-				049589CE2D7455B4004BF4E0 /* AddContactVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
